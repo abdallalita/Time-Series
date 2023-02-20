@@ -1,5 +1,5 @@
-# [Volatility Forecasting](Introduction)
-# [Air Quality PM 2.5 readings Prediction](Inspiration)
+# [Volatility Forecasting](introduction)
+# [Air Quality PM 2.5 readings Prediction](inspiration)
 
 
 ## Introduction
