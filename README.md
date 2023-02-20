@@ -1,5 +1,5 @@
-[Volatility Forecasting](Introduction)
-[Air Quality PM 2.5 readings Prediction](Inspiration)
+# [Volatility Forecasting](Introduction)
+# [Air Quality PM 2.5 readings Prediction](Inspiration)
 
 
 ## Introduction
@@ -13,6 +13,7 @@ that drive its variability are very important for investment purposes.
 The dataset was extracted from [Kaggle](http://www.kaggle.com/) public datasets, a span of 5 years from 2017 to 2022. The dataset had no missing values. All Outliers
 were included as such extremes are important in highlighting how the cryptocurrency behaves unexpectedly (volatile). I conducted a time series analysis to understand the trend or systemic pattern overtime on the crypto for a better forecast.
 I used GARCH(1,1) as the volatility forecasting model for the crypto as proposed by Bollerslev,Tim (1986). A Walk Forward Validation evaluation method was used on the test data for the dataset.This is because the predictions over time become less and less acurate and hence it's more realistic to retrain the model as new data becomes available, giving the model good forecasts at each time step.
+
 ---
 ## Inspiration
 Air Pollution has become a life threatening factor in many countries around the world as it damages the climate and cause various diseases including respiratory diseases and many other lung diseasea. Among air pollutants, **Particulate Matter with a diameter of of 2.5 (PM 2.5)** is considered a hazardous air pollutant to human health. Hence it is necessary to accurately forecast or **predict the PM 2.5 concentrations in the air**, in order to help citizens and the parties involved plan the measures to alleviate the harmful effect of air pollution and prevent the dangerous impact beforehand, for better Air Quality.
