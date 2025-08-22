@@ -9,10 +9,10 @@ Gold is one of the most important and actively traded assets in global financial
 
 ---
 ### Dataset definition
-The dataset contains 1718 daily observations.
-Source: Yahoo Finance
-Time Period: November 18, 2011 – January 1, 2019
-Columns:Date and Adjusted closing prices.
+- The dataset contains 1718 daily observations.
+- Source: Yahoo Finance
+- Time Period: November 18, 2011 – January 1, 2019
+- Columns:Date and Adjusted closing prices.
 
 ### Data Preprocessing
 Checked for duplicates → None found.
@@ -33,21 +33,21 @@ Returns were calculated as the log difference of adjusted close prices.
 The return series oscillates around zero with no visible trend.
 Augmented Dickey-Fuller (ADF) test confirmed stationarity of returns.
 
-3. Volatility Clustering
+**3. Volatility Clustering**
 The return series exhibits volatility clustering (periods of high volatility followed by high volatility, and low by low).
 This is a key characteristic that motivates GARCH-type models.
 
-4. Autocorrelation Analysis
+**4. Autocorrelation Analysis**
 Uisng both Ljung-Box test & ACF plot there was significant autocorrelation in squared returns, evidence of volatility clustering, justifies GARCH use.
 This strongly suggests that conditional heteroskedasticity models (GARCH) are suitable.
 
-5. Summary Statistics
+**5. Summary Statistics**
 Mean: approximately 0 hence no persistent drift.
 Standard Deviation: approximately 2.45 hence moderate volatility.
 EXtreme values range: from -11.31% to +12.00% showing presence of large shocks.
 Skewness: slight positive asymmetry since positive returns more spread out.
 
-6. Distribution of Returns
+**6. Distribution of Returns**
 Histogram peaked around zero with heavy tails indicating extreme price movements.
 Kurtosis: excess > 0 hence leptokurtic distribution (fat tails).
 Confirms that large movements occur more often than under a normal distribution.
@@ -55,15 +55,16 @@ Confirms that large movements occur more often than under a normal distribution.
 ### Modeling with GARCH(1,1), diagnostics and assumption Checks
 Simple yet effective baseline model where variance depends on both past shocks (ARCH term) and past volatility (GARCH term).
 After fitting the GARCH(1,1) model, it is necessary to verify that the model adequately explains the volatility structure of the data. The following diagnostics were performed:
-1. Autocorrelation of Standardized Squared Residual
+
+**1. Autocorrelation of Standardized Squared Residual**
 ACF plots of residuals showed all spikes within confidence bands hence no significant autocorrelation left. Also the Ljung-Box test confirmed that.
 This indicates that volatility clustering has been captured by the model.
 
-2. ARCH Effects Test
+**2. ARCH Effects Test**
 Performed an ARCH-LM test on standardized residuals.
 Results showed no remaining ARCH effects, confirming the adequacy of the model in modeling conditional variance.
 
-3. Parameter Significance
+**3. Parameter Significance**
 All estimated parameters were statistically significant.
 Both α and β > 0, with α + β close to 1, the model adequately captures volatility dynamics.
 
