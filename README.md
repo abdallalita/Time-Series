@@ -1,5 +1,5 @@
 # [Gold Volatility Forecasting](#Introduction-1)
-# [Volatility Forecasting](#Introduction)
+# [Bitcoin Volatility Forecasting](#Introduction)
 # [Air Quality PM 2.5 readings Prediction](#Inspiration)
 
 ## Introduction-1
@@ -53,7 +53,7 @@ Kurtosis: excess > 0 hence leptokurtic distribution (fat tails).
 Confirms that large movements occur more often than under a normal distribution.
 
 ### Modeling with GARCH(1,1), diagnostics and assumption Checks
-Simple yet effective baseline model where variance depends on both past shocks (ARCH term) and past volatility (GARCH term).
+Its a Simple yet effective baseline model where variance depends on both past shocks (ARCH term) and past volatility (GARCH term).
 After fitting the GARCH(1,1) model, it is necessary to verify that the model adequately explains the volatility structure of the data. The following diagnostics were performed:
 
 **1. Autocorrelation of Standardized Squared Residual**
@@ -90,6 +90,12 @@ This gradual increase is consistent with persistent volatility dynamics.
 
 ### Conclusion
 This project demonstrated how the GARCH(1,1) model can effectively capture and forecast the volatility of gold prices. The final 10-day ahead forecasts indicated stable but slightly increasing volatility, providing insights that can support traders and investors in refining strategies and managing risk.
+
+### Limitation and Future Work
+Standard GARCH treats positive and negative shocks of the same size as having the same effect on volatility. For example, a +2% return and a –2% return would increase volatility by the same amount. In reality, financial markets often react more strongly to negative shocks like bad news which typically increase volatility more than positive shocks or good news. This limitation motivates the use of asymmetric models such as EGARCH or GJR-GARCH to capture asymmetry.
+
+Extend dataset to include post-2019 data (COVID-19 + recent volatility).
+Build a real-time forecasting dashboard  (Streamlit).
 
 ## Introduction
 This project is inspired by the fact that Bitcoin, the most popular and commonly utilized cryptocurrencies available on the crypto market, has experienced volatility since its
