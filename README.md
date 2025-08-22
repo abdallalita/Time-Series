@@ -22,7 +22,7 @@ Created log returns to transform prices into a stationary series suitable for vo
 
 ### Exploratory Data Analysis (EDA) and Model Suitability Checks
 Before fitting a GARCH model, it is essential to verify that the return series has the properties that make GARCH appropriate.
-1. Price Trends
+**1. Price Trends**
 Visualized gold price series.
 The price shows a general downward trend over the sample period (2011–2018).
 Since raw prices are non-stationary, we worked with log returns instead.
@@ -54,11 +54,11 @@ Confirms that large movements occur more often than under a normal distribution.
 ### Modeling with GARCH(1,1), diagnostics and assumption Checks
 Simple yet effective baseline model where variance depends on both past shocks (ARCH term) and past volatility (GARCH term).
 After fitting the GARCH(1,1) model, it is necessary to verify that the model adequately explains the volatility structure of the data. The following diagnostics were performed:
-Autocorrelation of Standardized Squared Residual
+1. Autocorrelation of Standardized Squared Residual
 ACF plots of residuals showed all spikes within confidence bands hence no significant autocorrelation left. Also the Ljung-Box test confirmed that.
 This indicates that volatility clustering has been captured by the model.
 
-ARCH Effects Test
+2. ARCH Effects Test
 Performed an ARCH-LM test on standardized residuals.
 Results showed no remaining ARCH effects, confirming the adequacy of the model in modeling conditional variance.
 
@@ -68,7 +68,7 @@ Both α and β > 0, with α + β close to 1, the model adequately captures volat
 
 ### Model Validation
 To ensure that the GARCH(1,1) model provides reliable forecasts beyond the training sample, I performed out-of-sample validation using a rolling window walk-forward approach. Financial time series like gold prices change over time, and old patterns may no longer reflect current market dynamics. Unlike an expanding window, which risks overweighting outdated data, the rolling approach always trains on the most recent observations, making the model more adaptive to evolving volatility conditions. It strikes a balance between learning from sufficient history and adapting to changing market dynamics, making it more realistic for financial forecasting.
-- Results
+- Results:
 Plotted Forecasted Volatility vs Realized Volatility.
 Both series moved closely together — rising and falling around the same periods.
 Indicates that the GARCH(1,1) model effectively tracks volatility clustering.
