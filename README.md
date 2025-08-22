@@ -22,12 +22,13 @@ Created log returns to transform prices into a stationary series suitable for vo
 
 ### Exploratory Data Analysis (EDA) and Model Suitability Checks
 Before fitting a GARCH model, it is essential to verify that the return series has the properties that make GARCH appropriate.
+
 **1. Price Trends**
 Visualized gold price series.
 The price shows a general downward trend over the sample period (2011–2018).
 Since raw prices are non-stationary, we worked with log returns instead.
 
-2. Returns series
+**2. Returns series**
 Returns were calculated as the log difference of adjusted close prices.
 The return series oscillates around zero with no visible trend.
 Augmented Dickey-Fuller (ADF) test confirmed stationarity of returns.
