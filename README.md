@@ -77,15 +77,21 @@ Indicates that the GARCH(1,1) model effectively tracks volatility clustering.
 
 ### Evaluation Metrics
 To quantify performance, I used standard volatility forecast loss functions:
+
 Mean Absolute Error (MAE): measures average deviation.
+
 Mean Squared Error (MSE): penalizes larger errors.
+
 QLIKE Loss: specifically designed for volatility forecasts.
+
 All metrics confirmed that the forecasts were reasonably accurate.
 
 ### Final future volatility Forecasts
 Produced a 10-day ahead forecast from the end of the dataset (post-2019-01-01).
 Forecasts were stable and slightly increasing:
-from approximately 2.25% daily volatility on 2019-01-01. to 2.27% daily volatility by 2019-01-14.
+
+From approximately 2.25% daily volatility on 2019-01-01. to 2.27% daily volatility by 2019-01-14.
+
 This gradual increase is consistent with persistent volatility dynamics.
 
 ### Conclusion
