@@ -54,11 +54,11 @@ Confirms that large movements occur more often than under a normal distribution.
 ### Modeling with GARCH(1,1), diagnostics and assumption Checks
 Simple yet effective baseline model where variance depends on both past shocks (ARCH term) and past volatility (GARCH term).
 After fitting the GARCH(1,1) model, it is necessary to verify that the model adequately explains the volatility structure of the data. The following diagnostics were performed:
-1. Autocorrelation of Standardized Squared Residual
+Autocorrelation of Standardized Squared Residual
 ACF plots of residuals showed all spikes within confidence bands hence no significant autocorrelation left. Also the Ljung-Box test confirmed that.
 This indicates that volatility clustering has been captured by the model.
 
-2. ARCH Effects Test
+ARCH Effects Test
 Performed an ARCH-LM test on standardized residuals.
 Results showed no remaining ARCH effects, confirming the adequacy of the model in modeling conditional variance.
 
