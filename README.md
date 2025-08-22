@@ -78,11 +78,11 @@ Indicates that the GARCH(1,1) model effectively tracks volatility clustering.
 ### Evaluation Metrics
 To quantify performance, I used standard volatility forecast loss functions:
 
-Mean Absolute Error (MAE): measures average deviation.
+- Mean Absolute Error (MAE): measures the average size of the forecasting errors, absolute deviation between forecasted and realized volatility. Small value indicates forecasts were generally close to actual values.
 
-Mean Squared Error (MSE): penalizes larger errors.
+- Mean Squared Error (MSE):  similar to MAE but it squares the errors before averaging. This means larger mistakes are penalized more heavily. A lower MSE indicates the model avoids big forecasting errors.
 
-QLIKE Loss: specifically designed for volatility forecasts.
+- QLIKE Loss: A loss function tailored for volatility forecasting. The relatively low value suggests the model produced reliable volatility estimates for risk management applications.
 
 All metrics confirmed that the forecasts were reasonably accurate.
 
